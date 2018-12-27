@@ -18,9 +18,9 @@ Team     : IndoSec
 Github   : https//github.com/revan-ar/\n\n\e[0;1m";
                                                                                  
                                                                                                                                                                  
-	//sleep(3);
+	sleep(3);
 	echo $banner;
-	//sleep(2);
+	sleep(2);
 	echo "File list shell : ";
 	$list = trim(fgets(STDIN));
 	$su = file_get_contents($list);
@@ -37,12 +37,6 @@ Github   : https//github.com/revan-ar/\n\n\e[0;1m";
 	curl_setopt($ch, CURLOPT_URL, $key);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_HEADER, 0);
-	//curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept: */*", "Accept-Language: en-US,en;q=0.5", "Accept-Encoding: gzip, deflate, br", "Referer: https://www.instagram.com/accounts/emailsignup/", "X-CSRFToken: $token[1]", "X-Instagram-AJAX: $ajax[1]", "Content-Type: application/x-www-form-urlencoded", "X-Requested-With: XMLHttpRequest", "TE: Trailers"));
-	//curl_setopt($ch, CURLOPT_PROXY, $proxy[rand(1, 2550)]);
-	//curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
-	//curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5);
-	//curl_setopt($ch, CURLOPT_POST, 1);
-	//curl_setopt($ch, CURLOPT_POSTFIELDS, "username=$data[0]&password=$data[1]&queryParams={}");
 	$exe = curl_exec($ch);
 	curl_close($ch);
 	preg_match("/<input type=\"password\"/i", $exe, $get);
